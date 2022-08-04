@@ -1,13 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
-//create a new type of 'deck'
-//which is a slice of strings
+// create a new type of 'deck'
+// which is a slice of strings
 type deck []string
 
-//create and return a list of playing cards
-//Essentially an array of strings
+// create and return a list of playing cards
+// Essentially an array of strings
 func newDeck() deck { //return value deck
 	cards := deck{}
 
@@ -31,4 +34,9 @@ func (d deck) print() { //reciever
 
 func deal(d deck, handSize int) (deck, deck) { //arguement deck and arguement handsize type int. Return two values of type deck
 	return d[:handSize], d[handSize:]
+}
+
+func (d deck) toString() string { //reciever of type deck
+	return strings.Join([]string(d), ",")
+
 }
