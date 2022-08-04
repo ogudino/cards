@@ -28,3 +28,7 @@ func (d deck) print() { //reciever
 		fmt.Println(i, card) //run this one time for each card in the slice
 	}
 }
+
+func deal(d deck, handSize int) (deck, deck) { //arguement deck and arguement handsize type int. Return two values of type deck
+	return d[:handSize], d[handSize:]
+}
